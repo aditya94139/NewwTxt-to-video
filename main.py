@@ -34,7 +34,7 @@ async def listen(chat_id, bot):
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /vastavik")
+    await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})")
 
 @bot.on_message(filters.command("stop"))
 async def stop(bot: Client, m: Message):
@@ -130,7 +130,7 @@ async def vastavik(bot: Client, m: Message):
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
 
             cc = f'[🎬] Vid_ID :** {str(count).zfill(3)}\n**Title  »** {name1} {res} {MR}.mkv\n**Batch »** {batch_name}\n\n'
-            cc1 = f'[📕 ] Vid_ID :** {str(count).zfill(3)}\n**Title »** {name1} {MR}.pdf\n**Batch »** {batch_name}\n\n'
+            cc1 = f'[📕] Vid_ID :** {str(count).zfill(3)}\n**Title »** {name1} {MR}.pdf\n**Batch »** {batch_name}\n\n'
 
             if "drive" in url:
                 try:
