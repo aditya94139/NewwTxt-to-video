@@ -11,9 +11,9 @@ from subprocess import getstatusoutput
 from pyrogram.errors import FloodWait
 
 bot = Client("bot",
-             bot_token="7054832669:AAGDS-LhvS14dy3yejqMfEJOVl3arknQAps",
-             api_id=20483216,
-             api_hash="2518170d3dd939b3f2893cb0aae805c4")
+             bot_token="6959047067:AAEIY2Hf_wdvKWrJGmtTJ4W7YDEJtZf8V0A",
+             api_id=22946135,
+             api_hash="93e1b0c387cabe34a3ccfa1724ae8527")
 
 # Dictionary to track user states
 user_states = {}
@@ -41,7 +41,7 @@ async def stop(bot: Client, m: Message):
     await m.reply_text("**STOPPED**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["vastavik"]))
+@bot.on_message(filters.command(["downvid"]))
 async def vastavik(bot: Client, m: Message):
     editable = await m.reply_text('Send TXT file for download')
     input_msg: Message = await listen(editable.chat.id, bot)
@@ -129,8 +129,8 @@ async def vastavik(bot: Client, m: Message):
             if "jw-prod" in url:
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
 
-            cc = f'**Vid_id  »** {str(count).zfill(3)}\n**Title  »** {name1} {res} {MR}.mkv\n**Batch »** {batch_name}\n\n'
-            cc1 = f'**Vid_id  »** {str(count).zfill(3)}\n**Title »** {name1} {MR}.pdf\n**Batch »** {batch_name}\n\n'
+            cc = f'[🎬] Vid_ID :** {str(count).zfill(3)}\n**Title  »** {name1} {res} {MR}.mkv\n**Batch »** {batch_name}\n\n'
+            cc1 = f'[📕 ] Vid_ID :** {str(count).zfill(3)}\n**Title »** {name1} {MR}.pdf\n**Batch »** {batch_name}\n\n'
 
             if "drive" in url:
                 try:
@@ -165,6 +165,6 @@ async def vastavik(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(f"Error: {str(e)}")
-    await m.reply_text("Done")
+    await m.reply_text("Done✅")
 
 bot.run()
